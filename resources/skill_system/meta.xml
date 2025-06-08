@@ -1,0 +1,9 @@
+<meta>
+    <info author="Project Y" version="1.0" type="script" name="Skill System" />
+    <script src="server.lua" type="server" />
+    <script src="client.lua" type="client" />
+    <include resource="pyrp_core" />
+    <include resource="vip_system" />
+    <export function="getSkillLevel" type="server" />
+    <export function="addSkillXP" type="server" />
+</meta>

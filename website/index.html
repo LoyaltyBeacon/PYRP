@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>City Web</title>
+</head>
+<body>
+<h1>City Web</h1>
+<form id="login-form" onsubmit="loginUser(event)">
+  <input id="username" placeholder="Username">
+  <input id="token" placeholder="Token">
+  <button type="submit">Login</button>
+</form>
+<p id="login-status"></p>
+<div id="tax-content"></div>
+<script>
+function autoLogin() {
+  const params = new URLSearchParams(window.location.search);
+  const user = params.get('username');
+  const token = params.get('token');
+  if (user && token) {
+    document.getElementById('username').value = user;
+    document.getElementById('token').value = token;
+    loginUser(new Event('submit'));
+  }
+}
+function loginUser(event) {
+  event.preventDefault();
+  const username = document.getElementById('username').value;
+  const token = document.getElementById('token').value;
+
+  fetch('login.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: `username=${encodeURIComponent(username)}&token=${encodeURIComponent(token)}`
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.status === "ok") {
+      document.getElementById('login-status').textContent = `Vitaj späť, ${username}!`;
+      document.getElementById('tax-content').textContent = `Načítavam pokuty...`;
+      loadTaxes(data.user_id);
+    } else {
+      document.getElementById('login-status').textContent = 'Neplatné údaje';
+    }
+  });
+}
+
+function loadTaxes(userId) {
+  fetch(`get_taxes.php?uid=${userId}`)
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('tax-content').textContent =
+        data.length ? `Máte ${data.length} pokút. Suma: ${data.reduce((a,b) => a + parseInt(b.amount), 0)} $` : 'Žiadne pokuty';
+    });
+}
+window.addEventListener('load', autoLogin);
+</script>
+</body>
+</html>

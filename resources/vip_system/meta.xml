@@ -1,0 +1,9 @@
+<meta>
+    <info author="Project Y" version="1.0" type="script" name="VIP System" />
+    <script src="server.lua" type="server" />
+    <script src="client.lua" type="client" />
+    <include resource="pyrp_core" />
+    <include resource="bank_system" />
+    <export function="getVipMultiplier" type="server" />
+    <export function="getVipTier" type="server" />
+</meta>

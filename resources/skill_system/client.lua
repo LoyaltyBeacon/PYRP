@@ -1,0 +1,1 @@
+-- Skill client stub for future GUI
