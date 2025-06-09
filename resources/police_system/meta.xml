@@ -2,4 +2,10 @@
     <info author="Project Y" version="1.0" type="script" name="Police System"/>
     <script src="server.lua" type="server" />
     <script src="client.lua" type="client" />
+    <export function="setWantedLevel" type="server" />
+    <export function="viewCriminalRecord" type="server" />
+    <export function="issueWarrant" type="server" />
+    <export function="arrestPlayer" type="server" />
+    <export function="jailPlayer" type="server" />
+    <export function="releasePlayer" type="server" />
 </meta>

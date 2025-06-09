@@ -4,4 +4,8 @@
     <script src="client.lua" type="client" />
     <include resource="pyrp_core" />
     <include resource="faction_system" />
+    <export function="generateTopPlayers" type="server" />
+    <export function="getRichestPlayers" type="server" />
+    <export function="getFactionStats" type="server" />
+    <export function="getMostWantedPlayers" type="server" />
 </meta>

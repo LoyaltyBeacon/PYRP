@@ -51,3 +51,22 @@ local function selectCharacter(player, id)
 end
 addEvent('characterSystem:select', true)
 addEventHandler('characterSystem:select', root, selectCharacter)
+
+addEventHandler('onPlayerQuit', root, function()
+    if not db then return end
+    local charId = getElementData(source, 'character:id')
+    if charId then
+        local x, y, z = getElementPosition(source)
+        dbExec(db, 'UPDATE characters SET posX=?, posY=?, posZ=? WHERE id=?', x, y, z, charId)
+    end
+end)
+
+addEventHandler('onResourceStop', resourceRoot, function()
+    for _, player in ipairs(getElementsByType('player')) do
+        local charId = getElementData(player, 'character:id')
+        if charId then
+            local x, y, z = getElementPosition(player)
+            dbExec(db, 'UPDATE characters SET posX=?, posY=?, posZ=? WHERE id=?', x, y, z, charId)
+        end
+    end
+end)

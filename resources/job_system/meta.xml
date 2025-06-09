@@ -3,4 +3,8 @@
     <script src="server.lua" type="server" />
     <script src="client.lua" type="client" />
     <include resource="pyrp_core" />
+    <export function="applyForJob" type="server" />
+    <export function="resignFromJob" type="server" />
+    <export function="getJobHistory" type="server" />
+    <export function="showJobList" type="server" />
 </meta>

@@ -53,7 +53,7 @@ local function loadPhones(player)
         phoneNumbers[player] = number
     end
 end
-addEventHandler('onPlayerLogin', root, function(_,acc)
+addEventHandler('account:postLogin', root, function(accID)
     loadPhones(source)
 end)
 

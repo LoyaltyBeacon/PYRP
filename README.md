@@ -1,5 +1,3 @@
-# PYRP
-PYRP- Project Y RP - MTA SK/CZ Server
 
 ## Project Y Roleplay Gamemode
 
@@ -9,7 +7,9 @@ This repository contains a modular Roleplay gamemode for Multi Theft Auto: San A
 - **pyrp_core** – Initializes the database connection and provides player data loading/saving events.
  - **health_system** – Tracks injuries, bleeding and unconscious state with commands for diagnosis, treatment and ambulance calls.
 - **job_system** – Employment office that lets players apply for jobs if they meet license and level requirements. Tracks active job, XP and saves a history of previous positions.
-- **faction_system** – Handles faction creation and invitations.
+- **faction_system** – Handles faction creation and invitations. The resource
+  creates default factions *VLADA*, *EMS*, *PD* and *HASIC* on start and exposes
+  their names for other modules.
 - **inventory** – Weight-based inventory stored in MySQL.
 - **gps** – Example GPS waypoint system.
 - **city_web** – In-game city portal with announcements, fines and election voting.
@@ -29,6 +29,7 @@ This repository contains a modular Roleplay gamemode for Multi Theft Auto: San A
 - **politics_system** – Handles mayor elections with candidate registration, voting commands and mayor announcements.
 - **police_system** – Provides warrant issuing, arresting, jailing and criminal records.
 - **event_system** – Allows administrators and factions to schedule RP events, register participants and list upcoming activities.
+- **dynamic_events** – Random RP incidents dispatched to EMS, PD or fire.
 
 These modules are minimal examples meant for further expansion and debugging.
 
@@ -50,5 +51,18 @@ These modules are minimal examples meant for further expansion and debugging.
 - **web_portal** – External PHP site that shares the same MySQL database as the in-game city web and accepts one-time tokens for automatic login from the game.
 - **leaderboard_system** – Dynamic leaderboards for top jobs, richest players and wanted criminals.
 - **event_system** – Supports planning RP events, participant registration and calendar listings.
+- **dynamic_events** – Random RP incidents dispatched to EMS, PD or fire.
 
 These new modules expand the skeleton to more closely resemble an Owl Gaming style server.
+
+## Running the server
+To run the gamemode locally you need the MTA:SA server binaries. Place the server executable and modules in the `x64` directory and keep the default `mods` folder alongside it. A minimal `mta-server.conf` is provided which starts `pyrp_core`, `account_system` and `admin_system` automatically. Simply launch the server binary from the repository root:
+
+```bash
+cd x64
+./mta-server64 -q ..
+```
+
+Resources are stored in the `resources` folder and the PHP web portal files are under `website`.
+
+

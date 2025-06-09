@@ -23,13 +23,6 @@ local function initDB()
             web_token VARCHAR(32),
             last_login DATETIME
         )]])
-        dbExec(db, [[CREATE TABLE IF NOT EXISTS characters (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            account_id INT,
-            name VARCHAR(32),
-            gender VARCHAR(10),
-            posX FLOAT, posY FLOAT, posZ FLOAT
-        )]])
     else
         outputServerLog('Account system DB connection failed')
     end

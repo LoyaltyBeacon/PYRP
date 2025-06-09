@@ -2,4 +2,9 @@
     <info author="Project Y" version="1.0" type="script" name="Politics System" />
     <script src="server.lua" type="server" />
     <script src="client.lua" type="client" />
+    <export function="registerCandidate" type="server" />
+    <export function="voteForCandidate" type="server" />
+    <export function="endVoting" type="server" />
+    <export function="getVotingStatus" type="server" />
+    <export function="broadcastMayorNews" type="server" />
 </meta>
