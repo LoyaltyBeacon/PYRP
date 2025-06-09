@@ -1,0 +1,2 @@
+-- Placeholder client logic for phone system GUI
+-- Future implementation will provide a smartphone-like interface

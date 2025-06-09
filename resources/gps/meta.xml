@@ -1,0 +1,6 @@
+<meta>
+    <info author="Project Y" version="1.0" type="script" name="GPS" />
+    <script src="server.lua" type="server" />
+    <script src="client.lua" type="client" />
+    <include resource="pyrp_core" />
+</meta>
