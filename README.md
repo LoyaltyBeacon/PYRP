@@ -27,6 +27,7 @@ This repository contains a modular Roleplay gamemode for Multi Theft Auto: San A
 - **politics_system** – Handles mayor elections with candidate registration, voting commands and mayor announcements.
 - **police_system** – Provides warrant issuing, arresting, jailing and criminal records.
 - **event_system** – Allows administrators and factions to schedule RP events, register participants and list upcoming activities.
+- **dynamic_events** – Random RP incidents dispatched to EMS, PD or fire.
 
 These modules are minimal examples meant for further expansion and debugging.
 
@@ -48,6 +49,7 @@ These modules are minimal examples meant for further expansion and debugging.
 - **web_portal** – External PHP site that shares the same MySQL database as the in-game city web and accepts one-time tokens for automatic login from the game.
 - **leaderboard_system** – Dynamic leaderboards for top jobs, richest players and wanted criminals.
 - **event_system** – Supports planning RP events, participant registration and calendar listings.
+- **dynamic_events** – Random RP incidents dispatched to EMS, PD or fire.
 
 These new modules expand the skeleton to more closely resemble an Owl Gaming style server.
 
