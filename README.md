@@ -55,3 +55,14 @@ These modules are minimal examples meant for further expansion and debugging.
 
 These new modules expand the skeleton to more closely resemble an Owl Gaming style server.
 
+## Running the server
+To run the gamemode locally you need the MTA:SA server binaries. Place the server executable and modules in the `x64` directory and keep the default `mods` folder alongside it. A minimal `mta-server.conf` is provided which starts `pyrp_core`, `account_system` and `admin_system` automatically. Simply launch the server binary from the repository root:
+
+```bash
+cd x64
+./mta-server64 -q ..
+```
+
+Resources are stored in the `resources` folder and the PHP web portal files are under `website`.
+
+
