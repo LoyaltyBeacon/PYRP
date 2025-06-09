@@ -2,4 +2,10 @@
     <info author="Project Y" name="Event System" type="script"/>
     <script src="server.lua" type="server"/>
     <script src="client.lua" type="client"/>
+    <export function="createEvent" type="server"/>
+    <export function="editEvent" type="server"/>
+    <export function="deleteEvent" type="server"/>
+    <export function="registerToEvent" type="server"/>
+    <export function="getEventList" type="server"/>
+    <export function="getEventParticipants" type="server"/>
 </meta>

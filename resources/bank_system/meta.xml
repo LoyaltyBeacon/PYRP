@@ -2,4 +2,7 @@
     <info author="Project Y" name="Bank System" type="script"/>
     <script src="server.lua" type="server"/>
     <script src="client.lua" type="client"/>
+    <export function="depositMoney" type="server"/>
+    <export function="withdrawMoney" type="server"/>
+    <export function="getPlayerBalance" type="server"/>
 </meta>

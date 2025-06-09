@@ -3,4 +3,7 @@
     <script src="server.lua" type="server" />
     <script src="client.lua" type="client" />
     <include resource="pyrp_core" />
+    <export function="giveItem" type="server" />
+    <export function="removeItem" type="server" />
+    <export function="hasItem" type="server" />
 </meta>

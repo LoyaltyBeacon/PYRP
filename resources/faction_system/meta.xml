@@ -3,4 +3,9 @@
     <script src="server.lua" type="server" />
     <script src="client.lua" type="client" />
     <include resource="pyrp_core" />
+    <export function="getFactionStats" type="server" />
+    <export function="getFactionId" type="server" />
+    <export function="getFactionName" type="server" />
+    <export function="getBaseFactionIds" type="server" />
+    <export function="getBaseFactionNames" type="server" />
 </meta>
