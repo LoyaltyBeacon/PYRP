@@ -7,7 +7,9 @@ This repository contains a modular Roleplay gamemode for Multi Theft Auto: San A
 - **pyrp_core** – Initializes the database connection and provides player data loading/saving events.
  - **health_system** – Tracks injuries, bleeding and unconscious state with commands for diagnosis, treatment and ambulance calls.
 - **job_system** – Employment office that lets players apply for jobs if they meet license and level requirements. Tracks active job, XP and saves a history of previous positions.
-- **faction_system** – Handles faction creation and invitations.
+- **faction_system** – Handles faction creation and invitations. The resource
+  creates default factions *VLADA*, *EMS*, *PD* and *HASIC* on start and exposes
+  their names for other modules.
 - **inventory** – Weight-based inventory stored in MySQL.
 - **gps** – Example GPS waypoint system.
 - **city_web** – In-game city portal with announcements, fines and election voting.

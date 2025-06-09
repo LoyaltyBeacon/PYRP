@@ -1,6 +1,7 @@
 -- Dynamic RP Events system
 
 local db
+local F = {}
 local incidents = {
     {
         typ = 'Bezvedomie na ulici',
@@ -37,9 +38,9 @@ end
 
 local function chooseIncident()
     local available = {}
-    local ems = getFactionCount('EMS')
-    local pd = getFactionCount('PD')
-    local fd = getFactionCount('HASIC')
+    local ems = getFactionCount(F.EMS)
+    local pd = getFactionCount(F.PD)
+    local fd = getFactionCount(F.HASIC)
     for _,inc in ipairs(incidents) do
         local ok = true
         if inc.factions.EMS and ems < inc.factions.EMS then ok=false end
@@ -66,9 +67,9 @@ local function triggerIncident(force)
     logEvent(inc.typ, inc.pos.x..','..inc.pos.y)
     if activeMarker then destroyElement(activeMarker) activeMarker=nil end
     activeMarker = createMarker(inc.pos.x, inc.pos.y, inc.pos.z, 'checkpoint', 2, 255,0,0)
-    dispatchToFaction('EMS', inc)
-    dispatchToFaction('PD', inc)
-    dispatchToFaction('HASIC', inc)
+    dispatchToFaction(F.EMS, inc)
+    dispatchToFaction(F.PD, inc)
+    dispatchToFaction(F.HASIC, inc)
 end
 
 function dispatchToFaction(faction, data)
@@ -86,6 +87,9 @@ end)
 
 addEventHandler('onResourceStart', resourceRoot, function()
     db = exports.pyrp_core:getDB()
+    if exports.faction_system then
+        F = exports.faction_system:getBaseFactionNames() or exports.faction_system:getBaseFactionIds()
+    end
     if db then
         dbExec(db, [[CREATE TABLE IF NOT EXISTS events_log (
             id INT AUTO_INCREMENT PRIMARY KEY,
