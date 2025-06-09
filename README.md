@@ -1,5 +1,3 @@
-# PYRP
-PYRP- Project Y RP - MTA SK/CZ Server
 
 ## Project Y Roleplay Gamemode
 
@@ -52,3 +50,4 @@ These modules are minimal examples meant for further expansion and debugging.
 - **event_system** – Supports planning RP events, participant registration and calendar listings.
 
 These new modules expand the skeleton to more closely resemble an Owl Gaming style server.
+
